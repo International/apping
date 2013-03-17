@@ -1,14 +1,21 @@
 source :rubygems
 
 # Server requirements
-# gem 'thin' # or mongrel
+gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
+
+gem "eventmachine"
+gem "em-http-request",:require => false
+gem 'em-synchrony', :git     => 'git://github.com/igrigorik/em-synchrony.git',:require => ['em-synchrony',"em-synchrony/em-http"]
+
 
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
 gem 'pg',"0.13.2"
+gem 'em-postgresql-adapter', :git => 'git://github.com/leftbee/em-postgresql-adapter.git'
+
 
 # Component requirements
 gem 'bcrypt-ruby', :require => "bcrypt"
