@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(:version => 2) do
 
   create_table "sites", :force => true do |t|
     t.string   "address"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "request_type"
+    t.text     "request_body"
   end
 
 end

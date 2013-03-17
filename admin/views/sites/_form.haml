@@ -4,6 +4,18 @@
   =f.text_field :address, :class => :text_field
   %span.description Ex: a simple text
 
+.group
+  =f.label :request_type
+  =f.error_message_on :request_type
+  =f.text_field :request_type, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :request_body
+  =f.error_message_on :request_body
+  ~f.text_area :request_body, :class => :text_area#, :value => f.object.request_body_casted
+  %span.description Ex: a simple text
+
 
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button

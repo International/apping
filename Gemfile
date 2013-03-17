@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 # Server requirements
 gem 'thin' # or mongrel
@@ -30,6 +30,13 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'
+
+group :development do
+    gem "pry",:github => "pry/pry",:ref => "d350493de2432e8a20bc847a5c55a6ebc257f702"
+    gem "pry-remote",:github => "Mon-Ouie/pry-remote",:ref => "c4d91dda70f4dd099abad0bbf39a7617efe85769"
+    gem 'pry-stack_explorer',"0.4.5"
+    gem "pry-debugger","0.2.0"
+end
 
 # Or Padrino Edge
 #gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
