@@ -23,12 +23,17 @@ ActiveRecord::Base.configurations[:development] = {
   :password => "password"
 }
 
+postgres = URI.parse(ENV['DATABASE_URL'] || '')
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'apping_production.db')
-
+  :adapter  => 'postgresql',
+  :encoding => 'utf8',
+  :database => postgres.path[1..-1], 
+  :username => postgres.user,
+  :password => postgres.password,
+  :host     => postgres.host
 }
+
 
 ActiveRecord::Base.configurations[:test] = {
   :adapter => 'sqlite3',
