@@ -9,7 +9,7 @@ class Site < ActiveRecord::Base
     before_save       :serialize_request_body
 
     def request_body_casted
-        JSON.load(self.request_body)
+        JSON.load(self.request_body) if self.request_body.present?
     end
 
     def self.decode(data)
