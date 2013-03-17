@@ -8,6 +8,8 @@ source :rubygems
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
+gem 'pg',"0.13.2"
+
 # Component requirements
 gem 'sass'
 gem 'haml'
@@ -22,7 +24,7 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 gem 'padrino', '0.10.7'
 
 # Or Padrino Edge
-# gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
+#gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
 
 # Or Individual Gems
 # %w(core gen helpers cache mailer admin).each do |g|

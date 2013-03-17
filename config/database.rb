@@ -13,11 +13,16 @@
 #     :socket    => '/tmp/mysql.sock'
 #   }
 #
-ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'apping_development.db')
 
+ActiveRecord::Base.configurations[:development] = {
+  :adapter => 'postgresql',
+  :host => "localhost",
+  :database => "apping_development",
+  :pool => "5",
+  :username => "john",
+  :password => "password"
 }
+
 
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'sqlite3',

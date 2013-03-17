@@ -58,6 +58,7 @@ GEM
     padrino-mailer (0.10.7)
       mail (~> 2.3.0)
       padrino-core (= 0.10.7)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -96,6 +97,7 @@ DEPENDENCIES
   activerecord
   haml
   padrino (= 0.10.7)
+  pg (= 0.13.2)
   rack-test
   rake
   sass
