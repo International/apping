@@ -11,6 +11,7 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pg',"0.13.2"
 
 # Component requirements
+gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'sass'
 gem 'haml'
 gem 'activerecord', :require => "active_record"
