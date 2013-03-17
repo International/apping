@@ -15,6 +15,8 @@ EM.synchrony do
             Fiber.new do
                 Site.find_each do |site|
                     em_http_params = site.request_body.present? ? site.request_body_casted : {}
+                    em_http_params = {:body => em_http_params}
+                    
                     client     = EventMachine::HttpRequest.new(site.address)
                     resp       = client.send(site.request_type.to_sym, em_http_params) 
                     code       = resp.response_header.status
