@@ -22,7 +22,7 @@ class Site < ActiveRecord::Base
     end 
 
     def serialize_request_body
-        self.request_body = JSON.dump(self.request_body) if self.request_body
+        self.request_body = JSON.dump(self.request_body) if(self.request_body_changed? and self.request_body.present?)
     end
 
     def valid_url
