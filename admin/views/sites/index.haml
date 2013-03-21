@@ -16,6 +16,8 @@
           %th=mat(:site, :updated_at)
           %th=mat(:site, :request_type)
           %th=mat(:site, :request_body)
+          %th=mat(:site, :response_body)
+          %th=mat(:site, :response_code)
           %th.last="&nbsp;"
         -@sites.each do |site|
           %tr
@@ -24,7 +26,9 @@
             %td=site.created_at
             %td=site.updated_at
             %td=site.request_type
-            %td=site.request_body_casted
+            %td=site.request_body
+            %td=site.response_body
+            %td=site.response_code
             %td.last
               =button_to pat(:edit), url(:sites, :edit, :id => site.id), :method => :get, :class => :button_to
               ="|"

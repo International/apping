@@ -11,10 +11,7 @@ Admin.controllers :sites do
   end
 
   post :create do
-    req_body = params[:site].delete("request_body")
     @site = Site.new(params[:site])
-    @site.request_body = Site.decode(req_body) if req_body.present?
-    
     if @site.save
       flash[:notice] = 'Site was successfully created.'
       redirect url(:sites, :edit, :id => @site.id)
@@ -29,10 +26,7 @@ Admin.controllers :sites do
   end
 
   put :update, :with => :id do
-    req_body = params[:site].delete("request_body")
     @site = Site.find(params[:id])
-    @site.request_body = Site.decode(req_body) if req_body.present?
-
     if @site.update_attributes(params[:site])
       flash[:notice] = 'Site was successfully updated.'
       redirect url(:sites, :edit, :id => @site.id)
